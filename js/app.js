@@ -40,8 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const actionsCell = document.createElement('td');
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
-      deleteButton.addEventListener('click', function() {
-        deleteRow(newRow);
+        deleteButton.addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete this employee?')) {
+              deleteRow(newRow);
+            }
       });
       actionsCell.appendChild(deleteButton);
 
